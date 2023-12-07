@@ -13,6 +13,23 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
+    fontFamily: {
+      main: ['Libre Baskerville', "serif"],
+    },
+    colors: {
+      main: '#3F51B5',
+      gray: {
+        100: '#F5F5F5',
+        200: '#E0E0E0',
+        300: '#BDBDBD',
+        400: '#9E9E9E',
+        500: '#757575',
+        600: '#616161',
+        700: '#424242',
+        800: '#212121',
+        900: '#121212',
+      },
+    }
   },
   plugins: [],
 }
