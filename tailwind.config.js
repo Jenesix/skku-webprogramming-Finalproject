@@ -16,8 +16,13 @@ module.exports = {
     fontFamily: {
       main: ['Libre Baskerville', "serif"],
     },
+    width: {
+      120: '30rem',
+    },
     colors: {
       main: '#3F51B5',
+      black: '#000000',
+      white: '#FFFFFF',
       gray: {
         100: '#F5F5F5',
         200: '#E0E0E0',
