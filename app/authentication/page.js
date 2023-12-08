@@ -1,5 +1,5 @@
 import Image from "next/image";
-import businessman from "../../public/images/businessman.png";
+import businessman from "../../public/images/hdbusiman.png";
 
 export default function Login() {
   return (
