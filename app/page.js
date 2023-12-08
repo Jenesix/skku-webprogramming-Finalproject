@@ -27,7 +27,8 @@ export default function Home() {
               </button>
            </div>
       </div>
-      <h1 className="text-xl">Home</h1>
+      
+
     </div>
   )
 }
