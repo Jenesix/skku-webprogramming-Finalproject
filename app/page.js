@@ -22,13 +22,13 @@ export default function Home() {
                 <br/>
               </p>
 
-              <button className="text-xl py-1 md:mr-48 bg-white text-main border-2 border-sub rounded-2xl hover:drop-shadow-xl active:bg-sub active:text-white ">
-                Create your free account
-              </button>
+              <button className="text-xl py-1 md:mr-48 bg-white text-main border-2 border-sub rounded-2xl transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring focus:border-sub">
+  Create your free account
+</button>
+
            </div>
       </div>
-      
-
+      <h1 className="text-xl">Home</h1>
     </div>
   )
 }
