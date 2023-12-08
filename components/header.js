@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaSearch } from "react-icons/fa";
 
 export default function Header() {
@@ -5,8 +6,8 @@ export default function Header() {
     <div className="border-b border-black pb-3">
       <header className="lg:ml-12">
         <div className="font-main mx-10 mt-4 flex xl:mx-20">
-          <p className="font-medium text-3xl  whitespace-nowrap float "><span className="text-main">LEARN</span> ELITE</p>
-          <p className="mt-2 ml-12 text-xl">Course</p>
+          <Link href="/" className="font-medium text-3xl  whitespace-nowrap float "><span className="text-main">LEARN</span> ELITE</Link>
+          <Link href="/course" className="mt-2 ml-12 text-xl">Course</Link>
           <form className="ml-4 md:ml-8 lg:ml-12 h-10 flex items-center">
             <div className="relative flex items-center">
               <FaSearch className="absolute ml-5 text-gray-500 mr-2 hidden md:block" />
