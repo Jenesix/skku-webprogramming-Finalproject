@@ -6,7 +6,7 @@ export default function Home() {
     <div className="font-main text-center">
       <div className="flex flex-col md:flex-row-reverse justify-evenly bg-gradient-to-r from-main to-sub  text-white w-8 h-auto ">
            <div className="my-8 md:basics-1/2">
-                <Image src={hero} width={500} height={500} />
+                <Image src={hero} width={300} height={300} />
            </div>
            <div className="my-8 md:basics-1/2 flex flex-col text-left justify-items-start">
               <p>
