@@ -31,10 +31,10 @@ export default function Home() {
 
         </div>
       </div>
-      <h1 className="text-xl sm:text-2xl lg:text-3xl ml-12 sm:ml-18 md:ml-28 lg:ml-24 mt-5">
+      <h1 className="text-xl sm:text-2xl lg:text-3xl ml-12 sm:ml-18 md:ml-28 lg:ml-24 xl:ml-32 mt-5">
         Courses for you
       </h1>
-      <div className="mt-4 mx-12 sm:mx-18 md:mx-28 lg:mx-24 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 grid-flow-row gap-8">
+      <div className="mt-4 mx-12 sm:mx-18 md:mx-28 lg:mx-24 xl:mx-32 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 grid-flow-row gap-8">
         <div className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
           <Image src={cat1} width={500} height={500} layout="responsive" objectFit="cover" />
           <div className="mt-2">
