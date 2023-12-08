@@ -11,7 +11,7 @@ export default function Course() {
                 <h1 className="text-xl sm:text-2xl lg:text-2xl text-main font-medium  mt-5">
                     Mathematics
                 </h1>
-                <button className="bg-white text-main border-main border-2 px-4 py-1 mt-5 rounded-full">
+                <button className="bg-white text-main transition-all duration-300 transform hover:scale-105 border-main border-2 px-4 py-1 mt-5 rounded-full">
                     See More
                 </button>
             </div>

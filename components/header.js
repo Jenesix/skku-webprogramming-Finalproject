@@ -6,8 +6,8 @@ export default function Header() {
     <div className="border-b border-black pb-3">
       <header className="lg:ml-12">
         <div className="font-main mx-10 mt-4 flex xl:mx-20">
-          <Link href="/" className="font-medium text-3xl  whitespace-nowrap float "><span className="text-main">LEARN</span> ELITE</Link>
-          <Link href="/course" className="mt-2 ml-12 text-xl">Course</Link>
+          <Link href="/" className="transition-all duration-300 transform hover:scale-105 font-medium text-3xl  whitespace-nowrap float "><span className="text-main">LEARN</span> ELITE</Link>
+          <Link href="/course" className="transition-all duration-300 transform hover:scale-105 mt-2 ml-12 text-xl">Course</Link>
           <form className="ml-4 md:ml-8 lg:ml-12 h-10 flex items-center">
             <div className="relative flex items-center">
               <FaSearch className="absolute ml-5 text-gray-500 mr-2 hidden md:block" />
@@ -19,10 +19,10 @@ export default function Header() {
             </div>
           </form>
           <div className="flex ml-auto items-center">
-            <button className="bg-white text-main border-2 ml-2 md:ml-4 xl:ml-6 border-main text-lg whitespace-nowrap rounded-3xl px-4 lg:px-8 h-10">
+            <button className="transition-all duration-300 transform hover:scale-105 bg-white text-main border-2 ml-2 md:ml-4 xl:ml-6 border-main text-lg whitespace-nowrap rounded-3xl px-4 lg:px-8 h-10">
               Log In
             </button>
-            <button className="bg-gradient-to-r from-main to-sub  text-white rounded-3xl ml-2 md:ml-4 xl:ml-6 px-4 lg:px-8 text-lg md:mr-12 whitespace-nowrap h-10">
+            <button className="transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-main to-sub  text-white rounded-3xl ml-2 md:ml-4 xl:ml-6 px-4 lg:px-8 text-lg md:mr-12 whitespace-nowrap h-10">
               Sign Up
             </button>
           </div>
