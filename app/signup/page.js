@@ -45,7 +45,7 @@ export default function Login() {
                   Sign up
                 </button>
                   <p className="text-gray-400 pb-2 pt-2"> OR</p>
-                <button className="flex flex-row place-items-center rounded-3xl border-2 border-gray-200 px-11 py-1 text-gray-400 hover:text-white hover:bg-main hover:border-main  transition-all duration-300 transform hover:scale-105">
+                <button className="flex flex-row place-items-center rounded-3xl border-2 border-gray-200 px-11 py-1 text-gray-400 hover:text-white hover:bg-blue-500 hover:border-blue-500  transition-all duration-300 transform hover:scale-105">
                   <FcGoogle className="mr-2"/> Sign in with google
                 </button>
                 <p className="text-gray-400 mt-6">
