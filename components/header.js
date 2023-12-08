@@ -3,7 +3,7 @@ import { FaSearch } from "react-icons/fa";
 export default function Header() {
   return (
     <div className="border-b border-black pb-3">
-      <header className="md:ml-8">
+      <header className="lg:ml-12">
         <div className="font-main mx-10 mt-4 flex xl:mx-20">
           <p className="font-medium text-3xl  whitespace-nowrap float "><span className="text-main">Learn</span> Elite</p>
           <p className="mt-2 ml-12 text-xl">Course</p>
@@ -21,7 +21,7 @@ export default function Header() {
             <button className="bg-white text-main border-2 ml-2 md:ml-4 xl:ml-6 border-main text-lg whitespace-nowrap rounded-3xl px-4 lg:px-8 h-10">
               Log In
             </button>
-            <button className="bg-gradient-to-r from-main to-sub  text-white rounded-3xl ml-2 md:ml-4 xl:ml-6 px-4 lg:px-8 text-lg whitespace-nowrap h-10">
+            <button className="bg-gradient-to-r from-main to-sub  text-white rounded-3xl ml-2 md:ml-4 xl:ml-6 px-4 lg:px-8 text-lg md:mr-12 whitespace-nowrap h-10">
               Sign Up
             </button>
           </div>
