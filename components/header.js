@@ -22,9 +22,12 @@ export default function Header() {
             <button className="transition-all duration-300 transform hover:scale-105 bg-white text-main border-2 ml-2 md:ml-4 xl:ml-6 border-main text-lg whitespace-nowrap rounded-3xl px-4 lg:px-8 h-10">
               Log In
             </button>
+            <Link href="/signup">
             <button className="transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-main to-sub  text-white rounded-3xl ml-2 md:ml-4 xl:ml-6 px-4 lg:px-8 text-lg md:mr-12 whitespace-nowrap h-10">
               Sign Up
             </button>
+            </Link>
+
           </div>
         </div>
       </header>
