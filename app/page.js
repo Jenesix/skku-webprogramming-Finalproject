@@ -9,17 +9,20 @@ export default function Home() {
                 <Image src={hero} width={300} height={300} />
            </div>
            <div className="my-8 md:basics-1/2 flex flex-col text-left justify-center">
-              <p>
+              <p className="text-3xl">
                 Don't stop learning to develop your skills
               </p>
-              <p>
-                Learn from expert professionals. Mathematics, Programming, 
-                
+              <p className="text-md">
+                <br></br> 
+                Learn from expert professionals. Mathematics,
+                Programming, Business, <br></br> and Marketing 
+                to find  
+                your dream. Join Us!
+                <br></br> 
+                <br></br> 
               </p>
-              <p>
-                Business, and Marketing to find your dream. Join Us!
-              </p>
-              <button className="w-20 bg-white text-main border-2 border-sub rounded-xl hover:drop-shadow-xl active:bg-sub active:text-white ">
+
+              <button className="text-xl py-1 mr-48 bg-white text-main border-2 border-sub rounded-2xl hover:drop-shadow-xl active:bg-sub active:text-white ">
                 Create your free account
               </button>
            </div>
