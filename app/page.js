@@ -36,7 +36,7 @@ export default function Home() {
         Courses for you
       </h1>
         {/* This is a video section use grid  */}
-      <div className="mt-4 mx-12 sm:mx-18 md:mx-28 lg:mx-24 xl:mx-32 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 grid-flow-row gap-8">
+      <div className="mt-4 mx-12 sm:mx-18 md:mx-28 lg:mx-24 xl:mx-32 grid grid-cols-1 lg:grid-cols-3  grid-flow-row gap-8">
         <div className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
           <Image src={cat1} width={500} height={500} layout="responsive" alt="Cat Development Bootcamp" objectFit="cover" />
           <div className="mt-2">
