@@ -9,7 +9,7 @@ export default function Home() {
                 <Image src={hero} width={300} height={300} />
            </div>
            <div className="my-8 md:basics-1/2 flex flex-col text-left justify-center">
-              <p className="text-3xl">
+              <p className="text-3xl whitespace-nowrap">
                 Don't stop learning to develop your skills
               </p>
               <p className="text-md">
