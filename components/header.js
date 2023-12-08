@@ -5,7 +5,7 @@ export default function Header() {
     <div className="border-b border-black pb-3">
       <header className="lg:ml-12">
         <div className="font-main mx-10 mt-4 flex xl:mx-20">
-          <p className="font-medium text-3xl  whitespace-nowrap float "><span className="text-main">Learn</span> Elite</p>
+          <p className="font-medium text-3xl  whitespace-nowrap float "><span className="text-main">LEARN</span> ELITE</p>
           <p className="mt-2 ml-12 text-xl">Course</p>
           <form className="ml-4 md:ml-8 lg:ml-12 h-10 flex items-center">
             <div className="relative flex items-center">
