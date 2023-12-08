@@ -21,13 +21,13 @@ export default function Home() {
                 <br></br> 
                 <br></br> 
               </p>
-
               <button className="text-xl py-1 mr-48 bg-white text-main border-2 border-sub rounded-2xl hover:drop-shadow-xl active:bg-sub active:text-white ">
                 Create your free account
               </button>
            </div>
       </div>
-      <h1 className="text-xl">Home</h1>
+      
+
     </div>
   )
 }
