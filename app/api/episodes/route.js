@@ -4,9 +4,9 @@ import { NextResponse } from "next/server";
 
 export async function POST(request){
     try{
-        const {name, in_course, description} = await request.json();
+        const {name, ep_course, description} = await request.json();
         await connectMongoDB();
-        await EP.create({name, in_course, description});
+        await EP.create({name, ep_course, description});
         return NextResponse.json({ message: "EP created!" },{ status: 201 });
     } catch (error){
         console.log('error',error);

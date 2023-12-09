@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 const episodeSchema = new Schema(
     {
         name: String,
-        in_course: String,
+        ep_course: String,
         description: String,
     }
 );
