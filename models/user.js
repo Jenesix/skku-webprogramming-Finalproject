@@ -3,10 +3,20 @@ const { Schema } = mongoose;
 
 const userSchema = new Schema(
     {
-        email: String,
-        password: String,
+        email: {
+            type: String,
+            required: true,
+            unique: true,
+        },
+        password: {
+            type: String,
+            required: false,
+        },
         isAdmin: Boolean,
-    }
+    },
+    {
+        timestamps: true,
+    },
 );
 const User = mongoose.models.User || mongoose.model("User",userSchema);
 export default User;

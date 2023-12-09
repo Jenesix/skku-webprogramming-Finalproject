@@ -1,9 +1,10 @@
 import Image from "next/image";
 import businessman from "../../public/images/hdbusiman.png";
-import { FcGoogle } from "react-icons/fc";;
+import { FcGoogle } from "react-icons/fc";import Link from "next/link";
+;
 
 
-export default function Login() {
+export default function Signup() {
 
   return (
     <div className="font-main mx-20 sm:mx-28 md:mx-44 lg:mx-38 xl:mx-56 mb-4 mt-12 border rounded-3xl border-black flex flex-col xl:border-l-0  ">
@@ -38,7 +39,7 @@ export default function Login() {
                       <label for="password" className="transform transition-all absolute top-0 left-0 h-full flex items-center pl-2 text-sm group-focus-within:text-xs peer-valid:test-xs group-focus-within:h-1/2 peer-valid:h-1/2 group-focus-within:-translate-y-full peer-valid:-translate-y-full group-focus-within:pl-0 peer-valid:pl-0 text-gray-400 peer-focus:text-main ">Create a password</label>
                   </div>
                 </div>
-                <a href="" className="text-gray-400 text-sm ml-40 mt-1 whitespace-nowrap">Forget password?</a>
+                <br/>
               </div>
 
               <div className="flex flex-col  place-items-center text-center mt-4">
@@ -51,7 +52,7 @@ export default function Login() {
                 </button>
                 <p className="text-gray-400 mt-6">
                   Have an account? 
-                  <a href="" className="text-main"> Log In</a>
+                  <Link href="/login" className="text-main"> Log In</Link>
                 </p>
                 <br/>
               </div>
