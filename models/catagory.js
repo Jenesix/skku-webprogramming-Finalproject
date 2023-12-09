@@ -23,3 +23,11 @@ const catagorySchema = new Schema(
 
     }
 )
+
+const userSchema = new Schema(
+    {
+        email: String,
+        password: String,
+        isAdmin: Boolean
+    }
+)
