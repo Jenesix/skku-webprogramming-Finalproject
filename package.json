@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "create-next-app": "^14.0.4",
+    "mangodb": "^1.0.0",
+    "mongoose": "^8.0.3",
     "next": "^14.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
