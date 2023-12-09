@@ -8,7 +8,7 @@ export default function Login() {
   return (
     <div className="font-main mx-20 sm:mx-28 md:mx-44 lg:mx-38 xl:mx-56 mb-4 mt-12 border rounded-3xl border-black flex flex-col xl:border-l-0  ">
         <div className=" lg:grid lg:grid-cols-5 ">
-            <div className="col-span-5 lg:col-span-3 flex flex-col bg-gradient-to-br  from-main to-sub border-0 rounded-2xl px-8 py-8 place-items-center relative bottom-1 xl:bottom-0">
+            <div className="col-span-5 lg:col-span-3 flex flex-col bg-gradient-to-br  from-main to-sub border-0 rounded-2xl px-8 py-8 place-items-center relative bottom-1 lg:bottom-0">
                 <Image src={businessman} width={300} height={300}/>
                 <p className="text-3xl text-white ">
                     <br/>
