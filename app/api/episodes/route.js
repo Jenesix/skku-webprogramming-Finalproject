@@ -1,12 +1,12 @@
 import connectMongoDB from "@/libs/mangodb";
-import EP from "@/models/schema";
+import EP from "@/models/episode";
 import { NextResponse } from "next/server";
 
 export async function POST(request){
     try{
-        const {name, description} = await request.json();
+        const {name, in_course, description} = await request.json();
         await connectMongoDB();
-        await EP.create({name, description});
+        await EP.create({name, in_course, description});
         return NextResponse.json({ message: "EP created!" },{ status: 201 });
     } catch (error){
         console.log('error',error);

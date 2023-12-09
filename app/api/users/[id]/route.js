@@ -1,14 +1,14 @@
 import connectMongoDB from "@/libs/mangodb";
-import EP from "@/models/episode";
+import User from "@/models/user";
 import { NextResponse } from "next/server";
 
 export async function PUT(request,{params}) {
     try{
         const {id} = params;
-        const {newName: name, new_course: in_course, newDescription: description} = await request.json();
+        const {newEmail: email, newPassword: password, newAdminStatus: isAdmin} = await request.json();
         await connectMongoDB();
-        await EP.findByIdAndUpdate(id, {name, in_course, description});
-        return NextResponse.json({ message: "EP Updated!" },{ status: 200 }); 
+        await User.findByIdAndUpdate(id, {email, password, isAdmin});
+        return NextResponse.json({ message: "User Updated!" },{ status: 200 }); 
 
     }catch(error){
         console.log("error",error)
@@ -19,8 +19,8 @@ export async function GET(request,{params}) {
     try{
         const {id} = params;
         await connectMongoDB();
-        const ep = await EP.findOne({_id: id});
-        return NextResponse.json({ ep },{ status: 200 }); 
+        const user = await User.findOne({_id: id});
+        return NextResponse.json({ user },{ status: 200 }); 
 
     }catch(error){
         console.log("error",error)
