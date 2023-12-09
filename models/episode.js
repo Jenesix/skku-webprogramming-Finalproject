@@ -6,6 +6,9 @@ const episodeSchema = new Schema(
         name: String,
         ep_course: String,
         description: String,
+    },
+    {
+        timestamps: true,
     }
 );
 

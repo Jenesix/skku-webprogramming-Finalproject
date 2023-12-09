@@ -7,6 +7,9 @@ const courseSchema = new Schema(
         name: String,
         course_cat: String,
         description: String,
+    },
+    {
+        timestamps: true,
     }
 );
 const Course = mongoose.models.Course || mongoose.model("Course",courseSchema);

@@ -4,7 +4,10 @@ const { Schema } = mongoose;
 const catagorySchema = new Schema(
     {
         name: String,
-        arrayOfCourse:[courseSchema],
+        description: String,
+    },
+    {
+        timestamps: true,
     }
 );
 
