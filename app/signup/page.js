@@ -5,9 +5,9 @@ import { FcGoogle } from "react-icons/fc";;
 export default function Login() {
 
   return (
-    <div className="font-main mx-64 my-24 border rounded-3xl border-black border-l-0  ">
-        <div className="grid grid-cols-5 grid-row-4">
-            <div className="col-span-3 row-span-4 flex flex-col bg-gradient-to-br  from-main to-sub border-0 rounded-2xl px-8 py-8 place-items-center ">
+    <div className="font-main mx-64 my-24 border rounded-3xl border-black flex flex-col xl:border-l-0  ">
+        <div className=" xl:grid xl:grid-cols-5 ">
+            <div className="col-span-5 xl:col-span-3 flex flex-col bg-gradient-to-br  from-main to-sub border-0 rounded-2xl px-8 py-8 place-items-center relative bottom-1 xl:bottom-0">
                 <Image src={businessman} width={300} height={300}/>
                 <p className="text-3xl text-white ">
                     <br/>
@@ -15,12 +15,12 @@ export default function Login() {
                 </p>
             </div>
             
-            <div className="col-span-2 row-span-4 px-16 pt-12">
-              <div className="flex flex-col justify-center">
-                <p className="text-2xl font-bold">
+            <div className=" flex flex-col xl:col-span-2 px-16 pt-12 place-items-center xl:mx-8">
+              <div className=" ">
+                <p className="relative text-2xl font-bold">
                   Sign up
                 </p>
-                <p className="text-gray-400">
+                <p className="relative text-gray-400">
                   and gain acess for better content
                 </p>
                 <br/>
@@ -40,13 +40,13 @@ export default function Login() {
                 <a href="" className="text-gray-400 text-sm pb-2 ml-40 mt-1 whitespace-nowrap">Forget password?</a>
               </div>
 
-              <div className="text-center">
+              <div className="flex flex-col  place-items-center text-center">
                 <button className="rounded-3xl border-2 border-main text-main px-6 py-1 hover:text-white hover:bg-main transition-all duration-300 transform hover:scale-105">
                   Sign up
                 </button>
                   <p className="text-gray-400 pb-2 pt-2"> OR</p>
-                <button className="flex flex-row place-items-center rounded-3xl border-2 border-gray-200 px-11 py-1 text-gray-400 hover:text-white hover:bg-blue-500 hover:border-blue-500  transition-all duration-300 transform hover:scale-105">
-                  <FcGoogle className="mr-2"/> Sign in with google
+                <button className="flex flex-row items-center rounded-3xl border-2 border-gray-200 px-11 py-1  hover:text-white hover:bg-blue-500 hover:border-blue-500  transition-all duration-300 transform hover:scale-105">
+                  <FcGoogle className="mr-2" /> Sign in with Google
                 </button>
                 <p className="text-gray-400 mt-6">
                   Have an account? 
