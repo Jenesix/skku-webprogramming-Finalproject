@@ -5,11 +5,8 @@ const { Schema } = mongoose;
 const courseSchema = new Schema(
     {
         name: String,
+        course_cat: String,
         description: String,
-        arrayOfEpisodes:{ 
-            ep: Schema.Types.ObjectId,
-            ref: EP,
-        },
     }
 );
 const Course = mongoose.models.Course || mongoose.model("Course",courseSchema);
