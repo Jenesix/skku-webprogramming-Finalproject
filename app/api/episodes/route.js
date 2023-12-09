@@ -7,7 +7,7 @@ export async function POST(request){
         const {name, description} = await request.json();
         await connectMongoDB();
         await EP.create({name, description});
-        return NextResponse.json({message: "EP created!"},{status: 201});
+        return NextResponse.json({ message: "EP created!" },{ status: 201 });
     } catch (error){
         console.log('error',error);
     }
@@ -28,7 +28,7 @@ export async function DELETE(request){
         const id = request.nextUrl.searchParams.get("id");
         await connectMongoDB();
         await EP.findByIdAndDelete(id);
-        return NextResponse.json({message: "EP Deleted!"},{status: 201});
+        return NextResponse.json({ message: "EP Deleted!" },{ status: 201 });
     }catch(error){
         console.log('error',error)
     }
