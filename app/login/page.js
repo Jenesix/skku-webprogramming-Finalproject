@@ -4,34 +4,41 @@ import businessman from "../../public/images/hdbusiman.png";
 import { FcGoogle } from "react-icons/fc";import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, useEffect} from "react";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 
 
 
 export default function Login() {
   const router = useRouter();
   const [error, setError] = useState("");
+  const { data: session, status: sessionStatus } = useSession();
+
+  useEffect(() => {
+    if (sessionStatus === "authenticated") {
+      router.replace("/");
+    }
+  }, [sessionStatus, router]);
 
 
-  const isValidEmail = (email) => {
-    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-    return emailRegex.test(email);
-  };
+  // const isValidEmail = (email) => {
+  //   const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+  //   return emailRegex.test(email);
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const email = e.target[0].value;
     const password = e.target[1].value;
 
-    if (!isValidEmail(email)) {
-      setError("Email is invalid");
-      return;
-    }
+    // if (!isValidEmail(email)) {
+    //   setError("Email is invalid");
+    //   return;
+    // }
 
-    if (!password || password.length < 8) {
-      setError("Password is invalid");
-      return;
-    }
+    // if (!password || password.length < 8) {
+    //   setError("Password is invalid");
+    //   return;
+    // }
 
     const res = await signIn("credentials", {
       redirect: false,
@@ -89,17 +96,22 @@ export default function Login() {
                 <button className="rounded-3xl border-2 border-main text-main px-8 py-1.5 hover:text-white hover:bg-gradient-to-r from-main to-sub hover:border-main transition-all duration-300 transform hover:scale-105">
                   Log In
                 </button>
-                  <p className="text-gray-400 pb-2 pt-2"> OR</p>
-                <button className="flex flex-row items-center rounded-3xl border-2 border-gray-200 px-11 py-1.5  hover:text-white hover:bg-blue-500 hover:border-blue-500  transition-all duration-300 transform hover:scale-105">
+                <p className="text-red-600 text-[16px] mb-4">{error && error}</p>
+                  <p className="text-gray-400 pb-2"> OR</p>
+                
+              </div>
+            </form>
+            <div className="">
+            <button onClick={() => {
+              signIn("google");
+            }} className="flex flex-row items-center rounded-3xl border-2 border-gray-200 px-11 py-1.5  hover:text-white hover:bg-blue-500 hover:border-blue-500  transition-all duration-300 transform hover:scale-105">
                   <FcGoogle className="mr-2" /> Sign in with Google
                 </button>
-                <p className="text-gray-400 mt-6">
+                <p className="text-gray-400 mt-6 pb-5 text-center">
                   Don't have an account?
                   <Link href="/signup" className="text-main"> Sign Up</Link>
                 </p>
-                <br/>
-              </div>
-            </form>
+            </div>
             </div>
 
         </div>

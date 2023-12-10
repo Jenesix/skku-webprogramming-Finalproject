@@ -4,7 +4,7 @@ import { FaSearch } from "react-icons/fa";
 import { signOut, useSession } from "next-auth/react";
 
 
-export default function Header() {
+export default function Navbar() {
   const { data: session } = useSession();
   return (
     <div className="border-b border-black pb-3">
@@ -14,7 +14,7 @@ export default function Header() {
           <Link href="/course" className="transition-all duration-300 transform hover:scale-105 mt-2 ml-12 text-xl">Course</Link>
           <form className="ml-4 md:ml-8 lg:ml-12 h-10 flex items-center">
             <div className="relative flex items-center">
-              <FaSearch className="absolute ml-5 text-gray-500 mr-2 md:block" />
+              <FaSearch className="absolute ml-5 text-gray-500 mr-2 hidden md:block" />
               <input
                 className="bg-gray-100 rounded-full pl-10 md:pl-14 hidden md:block py-1 focus:outline-none border  w-60 md:w-96 xl:w-120"
                 type="text"

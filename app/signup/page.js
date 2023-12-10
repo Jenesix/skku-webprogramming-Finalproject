@@ -5,12 +5,20 @@ import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, useEffect} from "react";
+import { useSession } from "next-auth/react";
+
 
 
 export default function Signup() {
   const [error, setError] = useState("");
   const router = useRouter();
+  const { data: session, status: sessionStatus } = useSession();
 
+  useEffect(() => {
+    if (sessionStatus === "authenticated") {
+      router.replace("/");
+    }
+  }, [sessionStatus, router]);
 
   
   const isValidEmail = (email) => {
@@ -56,10 +64,12 @@ export default function Signup() {
       console.log(error);
     }
   };
-  
+
+
 
 
   return (
+    sessionStatus !== "authenticated" && (
     <div className="font-main mx-20 sm:mx-28 md:mx-44 lg:mx-38 xl:mx-56 mb-4 mt-12 border rounded-3xl border-black flex flex-col xl:border-l-0 ">
       <div className=" lg:grid lg:grid-cols-5 ">
         <div className="col-span-5 lg:col-span-3 flex flex-col bg-gradient-to-br  from-main to-sub border-0 rounded-2xl px-8 py-8 place-items-center relative bottom-1 lg:bottom-0">
@@ -132,5 +142,5 @@ export default function Signup() {
         </div>
       </div>
     </div>
-  );
+  ));
 }

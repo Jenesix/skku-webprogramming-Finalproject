@@ -7,7 +7,6 @@ import User from "@/models/user";
 import connectMongoDB from "@/libs/mangodb";
 
 export const authOptions = {
-  // Configure one or more authentication providers
   providers: [
     CredentialsProvider({
       id: "credentials",
@@ -35,10 +34,10 @@ export const authOptions = {
       },
     }),
 
-  GoogleProvider({
+GoogleProvider({
     clientId: process.env.GOOGLE_CLIENT_ID,
-    clientSecret: process.env.GOOGLE_CLIENT_SECRET
-  })
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  }),
 ],
     callbacks: {
         async signIn({ user, account }) {
