@@ -1,5 +1,4 @@
 import { Inter } from 'next/font/google'
-import Header from '@/components/header'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -13,7 +12,6 @@ export default function CourseLayout({ children }) {
   return (
     <html lang="en">
         <body className={inter.className}>
-            <Header/>
             <h1 className="font-main text-center text-2xl font-medium mt-4">Course</h1>
             <div>{children}</div> 
         </body>

@@ -14,7 +14,7 @@ export const POST = async (request) => {
     }
 
     const hashedPassword = await bcrypt.hash(password, 5);
-    const newUser = new User({ email, password: hashedPassword });
+    const newUser = new User({ email, password: hashedPassword, isAdmin: false});
 
 
     try {
