@@ -1,7 +1,11 @@
+"use client";
 import Link from "next/link";
 import { FaSearch } from "react-icons/fa";
+import { signOut, useSession } from "next-auth/react";
+
 
 export default function Header() {
+  const { data: session } = useSession();
   return (
     <div className="border-b border-black pb-3">
       <header className="lg:ml-12">
@@ -10,7 +14,7 @@ export default function Header() {
           <Link href="/course" className="transition-all duration-300 transform hover:scale-105 mt-2 ml-12 text-xl">Course</Link>
           <form className="ml-4 md:ml-8 lg:ml-12 h-10 flex items-center">
             <div className="relative flex items-center">
-              <FaSearch className="absolute ml-5 text-gray-500 mr-2 hidden md:block" />
+              <FaSearch className="absolute ml-5 text-gray-500 mr-2 md:block" />
               <input
                 className="bg-gray-100 rounded-full pl-10 md:pl-14 hidden md:block py-1 focus:outline-none border  w-60 md:w-96 xl:w-120"
                 type="text"
@@ -19,6 +23,8 @@ export default function Header() {
             </div>
           </form>
           <div className="flex ml-auto items-center">
+          {!session ? (
+            <>
             <Link href="/login">
             <button className="transition-all duration-300 transform hover:scale-105 bg-white text-main border-2 ml-2 md:ml-4 xl:ml-6 border-main text-lg whitespace-nowrap rounded-3xl px-4 lg:px-8 h-10">
               Log In
@@ -29,6 +35,22 @@ export default function Header() {
               Sign Up
             </button>
             </Link>
+            </>
+            ) : (
+              <>
+              {session.user?.email}
+              <li>
+                <button
+                  onClick={() => {
+                    signOut();
+                  }}
+                  className="p-2 px-5 -mt-1 bg-blue-800 rounded-full"
+                >
+                  Logout
+                </button>
+              </li>
+            </>
+          )}
 
           </div>
         </div>

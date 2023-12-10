@@ -1,10 +1,52 @@
+"use client";
 import Image from "next/image";
 import businessman from "../../public/images/hdbusiman.png";
 import { FcGoogle } from "react-icons/fc";import Link from "next/link";
-;
+import { useRouter } from "next/navigation";
+import { useState, useEffect} from "react";
+import { signIn } from "next-auth/react";
+
 
 
 export default function Login() {
+  const router = useRouter();
+  const [error, setError] = useState("");
+
+
+  const isValidEmail = (email) => {
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    return emailRegex.test(email);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const email = e.target[0].value;
+    const password = e.target[1].value;
+
+    if (!isValidEmail(email)) {
+      setError("Email is invalid");
+      return;
+    }
+
+    if (!password || password.length < 8) {
+      setError("Password is invalid");
+      return;
+    }
+
+    const res = await signIn("credentials", {
+      redirect: false,
+      email,
+      password,
+    });
+
+    if (res?.error) {
+      setError("Invalid email or password");
+      if (res?.url) router.replace("");
+    } else {
+      setError("");
+    }
+  };
+
 
   return (
     <div className="font-main mx-20 sm:mx-28 md:mx-44 lg:mx-38 xl:mx-56 mb-4 mt-12 border rounded-3xl border-black flex flex-col xl:border-l-0  ">
@@ -18,6 +60,7 @@ export default function Login() {
             </div>
             
             <div className=" flex flex-col lg:col-span-2 pt-6 lg:pt-12 place-items-center ">
+            <form onSubmit={handleSubmit}>
               <div className=" ">
                 <p className="relative text-3xl lg:text-2xl font-bold">
                   Log In
@@ -56,6 +99,7 @@ export default function Login() {
                 </p>
                 <br/>
               </div>
+            </form>
             </div>
 
         </div>
