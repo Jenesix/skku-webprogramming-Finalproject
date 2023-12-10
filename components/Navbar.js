@@ -1,7 +1,11 @@
+"use client";
 import Link from "next/link";
 import { FaSearch } from "react-icons/fa";
+import { signOut, useSession } from "next-auth/react";
 
-export default function Header() {
+
+export default function Navbar() {
+  const { data: session } = useSession();
   return (
     <div className="border-b border-black pb-3">
       <header className="lg:ml-12">
@@ -19,6 +23,8 @@ export default function Header() {
             </div>
           </form>
           <div className="flex ml-auto items-center">
+          {!session ? (
+            <>
             <Link href="/login">
             <button className="transition-all duration-300 transform hover:scale-105 bg-white text-main border-2 ml-2 md:ml-4 xl:ml-6 border-main text-lg whitespace-nowrap rounded-3xl px-4 lg:px-8 h-10">
               Log In
@@ -29,6 +35,22 @@ export default function Header() {
               Sign Up
             </button>
             </Link>
+            </>
+            ) : (
+              <>
+              {session.user?.email}
+              <li>
+                <button
+                  onClick={() => {
+                    signOut();
+                  }}
+                  className="p-2 px-5 -mt-1 bg-blue-800 rounded-full"
+                >
+                  Logout
+                </button>
+              </li>
+            </>
+          )}
 
           </div>
         </div>
