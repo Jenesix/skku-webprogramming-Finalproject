@@ -54,42 +54,39 @@ export default async function Course() {
         // console.log("====================");
 
     const Courses = await getCourses();
+    Course
         // console.log(Courses);
         // console.log("====================");
         // console.log(typeof Courses);
         // console.log("====================");
 
     return(
-        Catagories.catagories.map((cata) => (
-            <div className="font-main">
-                <div className="flex items-center justify-between mx-12 sm:mx-18 md:mx-28 lg:mx-24 xl:mx-32 my-4">
-                    <h1 className="text-xl sm:text-2xl lg:text-2xl text-main font-medium  mt-5">
-                    {cata.name}
-                    </h1>
-                    <button className="bg-white text-main transition-all duration-300 transform hover:scale-105 border-main border-2 px-4 py-1 mt-5 rounded-full">
-                        See More
-                    </button>
-                </div>
-                    
-                <div className="mt-4 mx-12 sm:mx-18 md:mx-28 lg:mx-24 xl:mx-32 grid grid-cols-1 lg:grid-cols-3 grid-flow-row gap-8">
-                {/* Courses.courses.map((c) => ( */}
-                    <div className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
-
-                        <Image src={cat1} width={500} height={500} alt="Cat Development Bootcamp" layout="responsive" objectFit="cover" />
-
-                        <div className="mt-2">
-                            <h1 className="text-lg md:text-xl mt-2">The Complete 2023 Cat Development Bootcamp</h1>
-                            <p className="text-gray-400">Dr. Cat</p>
-
+        <>
+            {Catagories.catagories.map((cata) => (
+                    <div className="font-main">
+                        <div className="flex items-center justify-between mx-12 sm:mx-18 md:mx-28 lg:mx-24 xl:mx-32 my-4">
+                            <h1 className="text-xl sm:text-2xl lg:text-2xl text-main font-medium  mt-5">
+                            {cata.name}
+                            </h1>
+                            <button className="bg-white text-main transition-all duration-300 transform hover:scale-105 border-main border-2 px-4 py-1 mt-5 rounded-full">
+                                See More
+                            </button>
                         </div>
-                    </div>
-                {/* )) */}
-                    
-                </div>             
-            </div> 
-    
-        ))
-        
-    )
+
+                        <div className="mt-4 mx-12 sm:mx-18 md:mx-28 lg:mx-24 xl:mx-32 grid grid-cols-1 lg:grid-cols-3 grid-flow-row gap-8">
+                            {Courses.courses.map((c) => (
+                                <div className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
+                                    <Image src={cat1} width={500} height={500} alt="Cat Development Bootcamp" layout="responsive" objectFit="cover" />
+                                    <div className="mt-2">
+                                        <h1 className="text-lg md:text-xl mt-2">{c.name}</h1>
+                                        <p className="text-gray-400">{c.description}Dr. Cat</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>            
+                </div> 
+                
+            ))}
+        </>)
 }
          
