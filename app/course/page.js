@@ -3,159 +3,90 @@ import cat1 from "/public/images/cat1.jpg";
 import cat2 from "/public/images/cat2.jpg";
 import cat3 from "/public/images/cat3.jpg";
 
-export default function Course() {
-    return (
-        <div className="font-main">
-            <h1 className="text-center text-2xl font-medium mt-4">Courses</h1>
-            <div className="flex items-center justify-between mx-12 sm:mx-18 md:mx-28 lg:mx-24 xl:mx-32">
-                <h1 className="text-xl sm:text-2xl lg:text-2xl text-main font-medium  mt-5">
-                    Mathematics
-                </h1>
-                <button className="bg-white text-main transition-all duration-300 transform hover:scale-105 border-main border-2 px-4 py-1 mt-5 rounded-full">
-                    See More
-                </button>
-            </div>
+async function getCatagories() {
+    try {
+        const res = await fetch("http://localhost:3000/api/catagories", {
+            method: "GET",
+            cache: "no-store",
+            headers: {
+                "Content-Type": "application/json",
+              },  
+        });
 
-            <div className="mt-4 mx-12 sm:mx-18 md:mx-28 lg:mx-24 xl:mx-32 grid grid-cols-1 lg:grid-cols-3 grid-flow-row gap-8">
-                <div className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
+        if (!res.ok) {
+            throw new Error("Failed to fetch Catagories");
+        }
+        const data = await res.json()
+        return data;
 
-                    <Image src={cat1} width={500} height={500} alt="Cat Development Bootcamp" layout="responsive" objectFit="cover" />
+    } catch (error) {
+        console.log("Error loading Catagories: ", error);
+    }
+};
 
-                    <div className="mt-2">
-                        <h1 className="text-lg md:text-xl mt-2">The Complete 2023 Cat Development Bootcamp</h1>
-                        <p className="text-gray-400">Dr. Cat</p>
+async function getCourses() {
+    try {
+        const res = await fetch("http://localhost:3000/api/courses", {
+            method: "GET",
+            cache: "no-store",
+            headers: {
+                "Content-Type": "application/json",
+              },  
+        });
 
-                    </div>
-                </div>
-                <div className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
-                    <Image src={cat2} width={500} height={500} layout="responsive" alt="Cat Digital Marketing" objectFit="cover" />
-                    <div className="mt-2">
-                        <h1 className="text-lg md:text-xl mt-2">Digital Marketing Agency | Start a Social Media Business for cat</h1>
-                        <p className="text-gray-400">Meow</p>
-                    </div>
-                </div>
-                <div className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
-                    <Image src={cat3} width={500} height={500} layout="responsive" alt="Cat UX/UI Figma" objectFit="cover" />
-                    <div className="mt-2">
-                        <h1 className="text-lg md:text-xl mt-2">Complete Web & Mobile Designer in 2023: UI/UX, Figma for cat</h1>
-                        <p className="text-gray-400">Lion cat</p>
-                    </div>
-                </div>
-            </div>
+        if (!res.ok) {
+            throw new Error("Failed to fetch Course");
+        }
+        const data = await res.json()
+        return data;
 
-            {/* End */}
+    } catch (error) {
+        console.log("Error loading Courses: ", error);
+    }
+};
 
-            <div className="flex items-center justify-between mx-12 sm:mx-18 md:mx-28 lg:mx-24 xl:mx-32">
-                <h1 className="text-xl sm:text-2xl lg:text-2xl text-main font-medium  mt-5">
-                    Programming
-                </h1>
-                <button className="bg-white text-main border-main border-2 px-4 py-1 mt-5 rounded-full">
-                    See More
-                </button>
-            </div>
+export default async function Course() {
 
-            <div className="mt-4 mx-12 sm:mx-18 md:mx-28 lg:mx-24 xl:mx-32 grid grid-cols-1 lg:grid-cols-3 grid-flow-row gap-8">
-                <div className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
+    const Catagories = await getCatagories();
+        // console.log(Catagories);
+        // console.log("====================");
+        // console.log(typeof Catagories);
+        // console.log("====================");
 
-                    <Image src={cat1} width={500} height={500} alt="Cat Development Bootcamp" layout="responsive" objectFit="cover" />
+    const Courses = await getCourses();
+    Course
+        // console.log(Courses);
+        // console.log("====================");
+        // console.log(typeof Courses);
+        // console.log("====================");
 
-                    <div className="mt-2">
-                        <h1 className="text-lg md:text-xl mt-2">The Complete 2023 Cat Development Bootcamp</h1>
-                        <p className="text-gray-400">Dr. Cat</p>
+    return(
+        <>
+            {Catagories.catagories.map((cata) => (
+                    <div className="font-main">
+                        <div className="flex items-center justify-between mx-12 sm:mx-18 md:mx-28 lg:mx-24 xl:mx-32 my-4">
+                            <h1 className="text-xl sm:text-2xl lg:text-2xl text-main font-medium  mt-5">
+                            {cata.name}
+                            </h1>
+                            <button className="bg-white text-main transition-all duration-300 transform hover:scale-105 border-main border-2 px-4 py-1 mt-5 rounded-full">
+                                See More
+                            </button>
+                        </div>
 
-                    </div>
-                </div>
-                <div className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
-                    <Image src={cat2} width={500} height={500} layout="responsive" alt="Cat Digital Marketing" objectFit="cover" />
-                    <div className="mt-2">
-                        <h1 className="text-lg md:text-xl mt-2">Digital Marketing Agency | Start a Social Media Business for cat</h1>
-                        <p className="text-gray-400">Meow</p>
-                    </div>
-                </div>
-                <div className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
-                    <Image src={cat3} width={500} height={500} layout="responsive" alt="Cat UX/UI Figma" objectFit="cover" />
-                    <div className="mt-2">
-                        <h1 className="text-lg md:text-xl mt-2">Complete Web & Mobile Designer in 2023: UI/UX, Figma for cat</h1>
-                        <p className="text-gray-400">Lion cat</p>
-                    </div>
-                </div>
-            </div>
-
-            {/* End */}
-
-            <div className="flex items-center justify-between mx-12 sm:mx-18 md:mx-28 lg:mx-24 xl:mx-32">
-                <h1 className="text-xl sm:text-2xl lg:text-2xl text-main font-medium  mt-5">
-                    Business
-                </h1>
-                <button className="bg-white text-main border-main border-2 px-4 py-1 mt-5 rounded-full">
-                    See More
-                </button>
-            </div>
-
-            <div className="mt-4 mx-12 sm:mx-18 md:mx-28 lg:mx-24 xl:mx-32 grid grid-cols-1 lg:grid-cols-3 grid-flow-row gap-8">
-                <div className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
-
-                    <Image src={cat1} width={500} height={500} alt="Cat Development Bootcamp" layout="responsive" objectFit="cover" />
-
-                    <div className="mt-2">
-                        <h1 className="text-lg md:text-xl mt-2">The Complete 2023 Cat Development Bootcamp</h1>
-                        <p className="text-gray-400">Dr. Cat</p>
-
-                    </div>
-                </div>
-                <div className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
-                    <Image src={cat2} width={500} height={500} layout="responsive" alt="Cat Digital Marketing" objectFit="cover" />
-                    <div className="mt-2">
-                        <h1 className="text-lg md:text-xl mt-2">Digital Marketing Agency | Start a Social Media Business for cat</h1>
-                        <p className="text-gray-400">Meow</p>
-                    </div>
-                </div>
-                <div className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
-                    <Image src={cat3} width={500} height={500} layout="responsive" alt="Cat UX/UI Figma" objectFit="cover" />
-                    <div className="mt-2">
-                        <h1 className="text-lg md:text-xl mt-2">Complete Web & Mobile Designer in 2023: UI/UX, Figma for cat</h1>
-                        <p className="text-gray-400">Lion cat</p>
-                    </div>
-                </div>
-            </div>
-
-            {/* End */}
-            <div className="flex items-center justify-between mx-12 sm:mx-18 md:mx-28 lg:mx-24 xl:mx-32">
-                <h1 className="text-xl sm:text-2xl lg:text-2xl text-main font-medium  mt-5">
-                    Marketing
-                </h1>
-                <button className="bg-white text-main border-main border-2 px-4 py-1 mt-5 rounded-full">
-                    See More
-                </button>
-            </div>
-
-            <div className="mt-4 mx-12 sm:mx-18 md:mx-28 lg:mx-24 xl:mx-32 grid grid-cols-1 lg:grid-cols-3 grid-flow-row gap-8">
-                <div className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
-
-                    <Image src={cat1} width={500} height={500} alt="Cat Development Bootcamp" layout="responsive" objectFit="cover" />
-
-                    <div className="mt-2">
-                        <h1 className="text-lg md:text-xl mt-2">The Complete 2023 Cat Development Bootcamp</h1>
-                        <p className="text-gray-400">Dr. Cat</p>
-
-                    </div>
-                </div>
-                <div className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
-                    <Image src={cat2} width={500} height={500} layout="responsive" alt="Cat Digital Marketing" objectFit="cover" />
-                    <div className="mt-2">
-                        <h1 className="text-lg md:text-xl mt-2">Digital Marketing Agency | Start a Social Media Business for cat</h1>
-                        <p className="text-gray-400">Meow</p>
-                    </div>
-                </div>
-                <div className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
-                    <Image src={cat3} width={500} height={500} layout="responsive" alt="Cat UX/UI Figma" objectFit="cover" />
-                    <div className="mt-2">
-                        <h1 className="text-lg md:text-xl mt-2">Complete Web & Mobile Designer in 2023: UI/UX, Figma for cat</h1>
-                        <p className="text-gray-400">Lion cat</p>
-                    </div>
-                </div>
-            </div>
- 
-        </div>
-    )
+                        <div className="mt-4 mx-12 sm:mx-18 md:mx-28 lg:mx-24 xl:mx-32 grid grid-cols-1 lg:grid-cols-3 grid-flow-row gap-8">
+                            {Courses.courses.map((c) => (
+                                <div className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
+                                    <Image src={cat1} width={500} height={500} alt="Cat Development Bootcamp" layout="responsive" objectFit="cover" />
+                                    <div className="mt-2">
+                                        <h1 className="text-lg md:text-xl mt-2">{c.name}</h1>
+                                        <p className="text-gray-400">{c.description}Dr. Cat</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>            
+                </div> 
+                
+            ))}
+        </>)
 }
+         

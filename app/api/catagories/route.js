@@ -16,8 +16,8 @@ export async function POST(request){
 export async function GET() {
     try{
         await connectMongoDB();
-        const catagory = await Catagory.find();
-        return NextResponse.json({catagory});   
+        const catagories = await Catagory.find();
+        return NextResponse.json({catagories});   
     } catch(error){
         console.log('error',error);
     }
