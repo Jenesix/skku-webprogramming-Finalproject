@@ -1,12 +1,12 @@
 import User from "@/models/user";
-import connect from "@/utils/database";
+import connectMongoDB from "@/libs/mangodb";
 import bcrypt from "bcryptjs";
 import { NextResponse } from "next/server";
 
 export const POST = async (request) => {
     const { email, password } = await request.json();
 
-    await connect();
+    await connectMongoDB();
 
     const existingUser = await User.findOne({ email });
     if (existingUser) {
