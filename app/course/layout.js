@@ -12,8 +12,9 @@ export default function CourseLayout({ children }) {
   return (
     <html lang="en">
         <body className={inter.className}>
-            <h1 className="font-main text-center text-2xl font-medium mt-4">Course</h1>
-            <div>{children}</div> 
+            <div>
+            <h1 className="font-main text-center text-2xl font-medium mt-4">Course</h1>{children}
+            </div> 
         </body>
     </html>
   )
