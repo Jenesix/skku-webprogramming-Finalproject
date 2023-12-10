@@ -3,6 +3,7 @@ import cat1 from "/public/images/cat1.jpg";
 import cat2 from "/public/images/cat2.jpg";
 import cat3 from "/public/images/cat3.jpg";
 
+
 async function getCatagories() {
     try {
         const res = await fetch("http://localhost:3000/api/catagories", {
@@ -54,7 +55,7 @@ export default async function Course() {
         // console.log("====================");
 
     const Courses = await getCourses();
-    Course
+
         // console.log(Courses);
         // console.log("====================");
         // console.log(typeof Courses);
