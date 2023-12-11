@@ -118,13 +118,15 @@ export default function Signup() {
               </div>
               <br />
             </div>
-            </form>
             <div className="flex flex-col  place-items-center text-center mt-4">
               <input
                 type="submit"
                 value="Sign up"
-                className="rounded-3xl border-2 border-main text-main px-8 py-1.5 hover:text-white hover:bg-gradient-to-r from-main to-sub hover:border-main transition-all duration-300 transform hover:scale-105"
+                className
+                ="rounded-3xl border-2 border-main text-main px-8 py-1.5 hover:text-white hover:bg-gradient-to-r from-main to-sub hover:border-main transition-all duration-300 transform hover:scale-105"
               />
+              </div>
+              </form>
               <p className="text-red-600 text-sm mb-4">{error && error}</p>
               <p className="text-gray-400 pb-2 pt-2"> OR</p>
               <button onClick={() => {
@@ -140,7 +142,7 @@ export default function Signup() {
                 </Link>
               </p>
               <br />
-            </div>
+            
 
         </div>
       </div>
