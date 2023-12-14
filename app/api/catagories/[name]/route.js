@@ -4,10 +4,10 @@ import { NextResponse } from "next/server";
 
 export async function PUT(request,{params}) {
     try{
-        const {id} = params;
+        const {name_param} = params.name;
         const {newName: name, newDescription: description} = await request.json();
         await connectMongoDB();
-        await Catagory.findByIdAndUpdate(id, {name, description});
+        await Catagory.findByIdAndUpdate(name_param, {name, description});
         return NextResponse.json({ message: "Catagory Updated!" },{ status: 200 }); 
 
     }catch(error){
@@ -17,9 +17,9 @@ export async function PUT(request,{params}) {
 
 export async function GET(request,{params}) {
     try{
-        const {id} = params;
+        const {name_param} = params.name;
         await connectMongoDB();
-        const catagory = await Catagory.findOne({_id: id});
+        const catagory = await Catagory.findOne({name: name_param});
         return NextResponse.json({ catagory },{ status: 200 }); 
 
     }catch(error){
