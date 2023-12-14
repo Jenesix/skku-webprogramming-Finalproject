@@ -63,8 +63,8 @@ export default async function Course() {
     return(
         <>
             <h1 className="font-main text-center text-2xl font-medium mt-4">Course</h1>
-            {Catagories.catagories.map((cata,index) => (
-                    <div key={index} className="font-main">
+            {Catagories.catagories.map((cata) => (
+                    <div key={cata.id} className="font-main">
                         <div className="flex items-center justify-between mx-12 sm:mx-18 md:mx-28 lg:mx-24 xl:mx-32 my-4">
                             <h1 className="text-xl sm:text-2xl lg:text-2xl text-main font-medium  mt-5">
                             {cata.name}
@@ -75,12 +75,14 @@ export default async function Course() {
                         </div>
 
                         <div className="mt-4 mx-12 sm:mx-18 md:mx-28 lg:mx-24 xl:mx-32 grid grid-cols-1 lg:grid-cols-3 grid-flow-row gap-8">
-                            {Courses.courses.map((c,index_c) => (
-                                <div key={index_c} className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
+                            {Courses.courses
+                            .filter((c) => c.course_cat === cata.name)
+                            .map((filteredCourse) =>(
+                                <div key={filteredCourse.id} className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
                                     <Image src={cat1} width={500} height={500} alt="Cat Development Bootcamp" layout="responsive" objectFit="cover" />
                                     <div className="mt-2">
-                                        <h1 className="text-lg md:text-xl mt-2">{c.name}</h1>
-                                        <p className="text-gray-400">{c.description}Dr. Cat</p>
+                                        <h1 className="text-lg md:text-xl mt-2">{filteredCourse.name}</h1>
+                                        <p className="text-gray-400">{filteredCourse.description}Dr. Cat</p>
                                     </div>
                                 </div>
                             ))}
