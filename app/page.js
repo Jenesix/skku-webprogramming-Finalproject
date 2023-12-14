@@ -4,8 +4,32 @@ import cat1 from "/public/images/cat1.jpg";
 import cat2 from "/public/images/cat2.jpg";
 import cat3 from "/public/images/cat3.jpg";
 
-export default function Home() {
+async function getCourses() {
+  try {
+      const res = await fetch("http://localhost:3000/api/courses", {
+          method: "GET",
+          cache: "no-store",
+          headers: {
+              "Content-Type": "application/json",
+            },  
+      });
+
+      if (!res.ok) {
+          throw new Error("Failed to fetch Course");
+      }
+      const data = await res.json()
+      return data;
+
+  } catch (error) {
+      console.log("Error loading Courses: ", error);
+  }
+};
+
+export default async function Home() {
+  const Courses = await getCourses();
+
   return (
+    <>
     <div className="font-main">
       <div className="flex flex-col md:flex-row-reverse place-items-center justify-evenly bg-gradient-to-r from-main to-sub  text-white w-8 h-auto ">
         <div className="my-8 md:ml-0 md:basics-1/2">
@@ -36,31 +60,49 @@ export default function Home() {
         Courses for you
       </h1>
         {/* This is a video section use grid  */}
+      
       <div className="mt-4 mx-12 sm:mx-18 md:mx-28 lg:mx-24 xl:mx-32 grid grid-cols-1 lg:grid-cols-3  grid-flow-row gap-8">
-        <div className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
-          <Image src={cat1} width={500} height={500} layout="responsive" alt="Cat Development Bootcamp" objectFit="cover" />
-          <div className="mt-2">
-            <h1 className="text-lg md:text-xl mt-2">The Complete 2023 Cat Development Bootcamp</h1>
-            <p className="text-gray-400">Dr. Cat</p>
-          </div>
-        </div>
-        <div className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
-          <Image src={cat2} width={500} height={500} layout="responsive" alt="Cat Digital Marketing" objectFit="cover" />
-          <div className="mt-2">
-            <h1 className="text-lg md:text-xl mt-2">Digital Marketing Agency | Start a Social Media Business for cat</h1>
-            <p className="text-gray-400">Meow</p>
-          </div>
-        </div>
-        <div className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
-          <Image src={cat3} width={500} height={500} layout="responsive" alt="Cat UX/UI Figma" objectFit="cover" />
-          <div className="mt-2">
-            <h1 className="text-lg md:text-xl mt-2">Complete Web & Mobile Designer in 2023: UI/UX, Figma for cat</h1>
-            <p className="text-gray-400">Lion cat</p>
-          </div>
-        </div>
+        {Courses.courses
+        .filter((c) => c.course_cat === "Mathematics")
+        .slice(0, 1) // Display only the first course1
+        .map((filteredCourse) =>(  
+            <div key={filteredCourse.id} className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
+                <Image src={filteredCourse.cover_img} width={500} height={500} alt="Cat Development Bootcamp" layout="responsive" objectFit="cover" />
+                <div className="mt-2">
+                    <h1 className="text-lg md:text-xl mt-2">{filteredCourse.name}</h1>
+                    <p className="text-gray-400">{filteredCourse.description}</p>
+                </div>
+            </div>
+        ))}
+
+        {Courses.courses
+        .filter((c) => c.course_cat === "Programming")
+        .slice(0, 1) // Display only the first course1
+        .map((filteredCourse) =>(  
+            <div key={filteredCourse.id} className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
+                <Image src={filteredCourse.cover_img} width={500} height={500} alt="Cat Development Bootcamp" layout="responsive" objectFit="cover" />
+                <div className="mt-2">
+                    <h1 className="text-lg md:text-xl mt-2">{filteredCourse.name}</h1>
+                    <p className="text-gray-400">{filteredCourse.description}</p>
+                </div>
+            </div>
+        ))}
+
+        {Courses.courses
+        .filter((c) => c.course_cat === "Marketing")
+        .slice(0, 1) // Display only the first course1
+        .map((filteredCourse) =>(  
+            <div key={filteredCourse.id} className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
+                <Image src={filteredCourse.cover_img} width={500} height={500} alt="Cat Development Bootcamp" layout="responsive" objectFit="cover" />
+                <div className="mt-2">
+                    <h1 className="text-lg md:text-xl mt-2">{filteredCourse.name}</h1>
+                    <p className="text-gray-400">{filteredCourse.description}</p>
+                </div>
+            </div>
+        ))}
       </div>
 
-
     </div>
+    </>
   )
 }

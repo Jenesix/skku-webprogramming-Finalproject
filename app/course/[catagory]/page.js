@@ -45,8 +45,8 @@ async function getCourses() {
 
 export default async function Course({params}) {
     
-    console.log(params.catagory);
-    console.log("====================");
+    // console.log(params.catagory);
+    // console.log("====================");
 
 
     const Catagories = await getCatagories();
@@ -81,10 +81,10 @@ export default async function Course({params}) {
                         .filter((c) => c.course_cat === cata.name)
                         .map((filteredCourse) =>(  
                             <div key={filteredCourse.id} className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
-                                <Image src={cat1} width={500} height={500} alt="Cat Development Bootcamp" layout="responsive" objectFit="cover" />
+                                <Image src={filteredCourse.cover_img} width={500} height={500} alt="Cat Development Bootcamp" layout="responsive" objectFit="cover" />
                                 <div className="mt-2">
                                     <h1 className="text-lg md:text-xl mt-2">{filteredCourse.name}</h1>
-                                    <p className="text-gray-400">{filteredCourse.description}Dr. Cat</p>
+                                    <p className="text-gray-400">{filteredCourse.description}</p>
                                 </div>
                             </div>
                         ))}
