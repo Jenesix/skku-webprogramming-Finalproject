@@ -5,7 +5,8 @@ import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, useEffect} from "react";
-import { useSession } from "next-auth/react";
+import { useSession, signIn } from "next-auth/react";
+
 
 
 
@@ -117,17 +118,21 @@ export default function Signup() {
               </div>
               <br />
             </div>
-
             <div className="flex flex-col  place-items-center text-center mt-4">
               <input
                 type="submit"
                 value="Sign up"
-                className="rounded-3xl border-2 border-main text-main px-8 py-1.5 hover:text-white hover:bg-gradient-to-r from-main to-sub hover:border-main transition-all duration-300 transform hover:scale-105"
+                className
+                ="rounded-3xl border-2 border-main text-main px-8 py-1.5 hover:text-white hover:bg-gradient-to-r from-main to-sub hover:border-main transition-all duration-300 transform hover:scale-105"
               />
+              </div>
+              </form>
               <p className="text-red-600 text-sm mb-4">{error && error}</p>
               <p className="text-gray-400 pb-2 pt-2"> OR</p>
-              <button className="flex flex-row items-center rounded-3xl border-2 border-gray-200 px-11 py-1.5  hover:text-white hover:bg-blue-500 hover:border-blue-500  transition-all duration-300 transform hover:scale-105">
-                <FcGoogle className="mr-2" /> Sign in with Google
+              <button onClick={() => {
+              signIn("google");
+            }} className="flex flex-row items-center rounded-3xl border-2 border-gray-200 px-11 py-1.5  hover:text-white hover:bg-blue-500 hover:border-blue-500  transition-all duration-300 transform hover:scale-105">
+                <FcGoogle  className="mr-2" /> Sign in with Google
               </button>
               <p className="text-gray-400 mt-6">
                 Have an account?
@@ -137,8 +142,8 @@ export default function Signup() {
                 </Link>
               </p>
               <br />
-            </div>
-          </form>
+            
+
         </div>
       </div>
     </div>
