@@ -83,7 +83,7 @@ export default async function Course({params}) {
                             <div key={filteredCourse.id} className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
                                 <Image src={filteredCourse.cover_img} href={`course/${filteredCourse.name}`} width={500} height={500} alt="Cat Development Bootcamp" layout="responsive" objectFit="cover" />
                                 <div className="mt-2">
-                                    <Link href={`course/${filteredCourse.name}`} >
+                                    <Link href={`/${filteredCourse.name}`} >
                                         <h1 className="text-lg md:text-xl mt-2">{filteredCourse.name}</h1>
                                     </Link>
                                     <p className="text-gray-400">{filteredCourse.description}</p>
