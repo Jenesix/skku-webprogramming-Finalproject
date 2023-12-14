@@ -69,7 +69,7 @@ export default async function Course() {
                         <h1 className="text-xl sm:text-2xl lg:text-2xl text-main font-medium  mt-5">
                         {cata.name}
                         </h1>
-                        <Link href={'./${cata.name}'} className="bg-white text-main transition-all duration-300 transform hover:scale-105 border-main border-2 px-4 py-1 mt-5 rounded-full">
+                        <Link href={'course/'+cata.name} className="bg-white text-main transition-all duration-300 transform hover:scale-105 border-main border-2 px-4 py-1 mt-5 rounded-full">
                             See More
                         </Link>
                     </div>
