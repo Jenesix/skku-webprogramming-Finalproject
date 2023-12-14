@@ -84,7 +84,7 @@ export default async function Course({params}) {
                                 <Image src={filteredCourse.cover_img} width={500} height={500} alt="Cat Development Bootcamp" layout="responsive" objectFit="cover" />
                                 <div className="mt-2">
                                     <h1 className="text-lg md:text-xl mt-2">{filteredCourse.name}</h1>
-                                    <p className="text-gray-400">{filteredCourse.description} Dr. Cat</p>
+                                    <p className="text-gray-400">{filteredCourse.description}</p>
                                 </div>
                             </div>
                         ))}

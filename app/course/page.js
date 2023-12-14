@@ -69,7 +69,7 @@ export default async function Course() {
                         <h1 className="text-xl sm:text-2xl lg:text-2xl text-main font-medium  mt-5">
                         {cata.name}
                         </h1>
-                        <Link href={`course/${cata.name}`} className="bg-white text-main transition-all duration-300 transform hover:scale-105 border-main border-2 px-4 py-1 mt-5 rounded-full">
+                        <Link href={`course/${cata.name}`} className="transition-all duration-300 transform hover:scale-105 border-2 border-main text-main rounded-full hover:text-white hover:bg-gradient-to-r from-main to-sub hover:border-main px-4 py-1">
                             See More
                         </Link>
                     </div>
@@ -83,7 +83,7 @@ export default async function Course() {
                                 <Image src={filteredCourse.cover_img} width={500} height={500} alt="Cat Development Bootcamp" layout="responsive" objectFit="cover" />
                                 <div className="mt-2">
                                     <h1 className="text-lg md:text-xl mt-2">{filteredCourse.name}</h1>
-                                    <p className="text-gray-400">{filteredCourse.description} Dr. Cat</p>
+                                    <p className="text-gray-400">{filteredCourse.description}</p>
                                 </div>
                             </div>
                         ))}

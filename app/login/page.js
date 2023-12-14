@@ -93,7 +93,7 @@ export default function Login() {
               </div>
 
               <div className="flex flex-col  place-items-center text-center mt-4">
-                <button className="rounded-3xl border-2 border-main text-main px-8 py-1.5 hover:text-white hover:bg-gradient-to-r from-main to-sub hover:border-main transition-all duration-300 transform hover:scale-105">
+                <button className="transition-all duration-300 transform hover:scale-105 rounded-3xl border-2 border-main text-main hover:text-white hover:bg-gradient-to-r from-main to-sub hover:border-main px-8 py-1.5">
                   Log In
                 </button>
                 <p className="text-red-600 text-[16px] mb-4">{error && error}</p>
