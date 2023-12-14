@@ -17,8 +17,7 @@ export async function PUT(request,{params}) {
 
 export async function GET(request,{params}) {
     try{
-        const name = params;
-        // const {name_param} = params;
+        const {name} = params; // {this} need to be the same name as folder name ([this])
         await connectMongoDB();
         const course = await Course.findOne({name: name});
         return NextResponse.json({ course },{ status: 200 }); 
