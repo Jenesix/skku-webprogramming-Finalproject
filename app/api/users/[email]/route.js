@@ -4,10 +4,10 @@ import { NextResponse } from "next/server";
 
 export async function PUT(request,{params}) {
     try{
-        const {email_param} = params;
-        const {newEmail: email, newPassword: password, newAdminStatus: isAdmin} = await request.json();
+        const {email} = params;
+        const {newEmail: _email, newPassword: password, newAdminStatus: isAdmin} = await request.json();
         await connectMongoDB();
-        await User.findByIdAndUpdate(email_param, {email, password, isAdmin});
+        await User.findByIdAndUpdate(email, {_email, password, isAdmin});
         return NextResponse.json({ message: "User Updated!" },{ status: 200 }); 
 
     }catch(error){
@@ -17,9 +17,9 @@ export async function PUT(request,{params}) {
 
 export async function GET(request,{params}) {
     try{
-        const {email_param} = params;
+        const {email} = params;
         await connectMongoDB();
-        const user = await User.findOne({email: email_param});
+        const user = await User.findOne({email: email});
         return NextResponse.json({ user },{ status: 200 }); 
 
     }catch(error){

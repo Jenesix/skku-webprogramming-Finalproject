@@ -2,12 +2,14 @@ import connectMongoDB from "@/libs/mangodb";
 import Catagory from "@/models/catagory";
 import { NextResponse } from "next/server";
 
+
+
 export async function PUT(request,{params}) {
     try{
-        const {name_param} = params.name;
-        const {newName: name, newDescription: description} = await request.json();
+        const {name} = params;
+        const {newName: _name, newDescription: description} = await request.json();
         await connectMongoDB();
-        await Catagory.findByIdAndUpdate(name_param, {name, description});
+        await Catagory.findOneAndUpdate(name, {_name, description});
         return NextResponse.json({ message: "Catagory Updated!" },{ status: 200 }); 
 
     }catch(error){
@@ -17,9 +19,10 @@ export async function PUT(request,{params}) {
 
 export async function GET(request,{params}) {
     try{
-        const {name_param} = params.name;
+        const {name} = params;
+        // const {name_param} = params;
         await connectMongoDB();
-        const catagory = await Catagory.findOne({name: name_param});
+        const catagory = await Catagory.findOne({"name":name});
         return NextResponse.json({ catagory },{ status: 200 }); 
 
     }catch(error){
