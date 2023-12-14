@@ -6,6 +6,7 @@ import { signOut, useSession } from "next-auth/react";
 
 export default function Navbar() {
   const { data: session } = useSession();
+
   return (
     <div className="border-b border-black pb-3">
       <header className="lg:ml-12">
@@ -26,7 +27,7 @@ export default function Navbar() {
           {!session ? (
             <>
             <Link href="/login">
-            <button className="transition-all duration-300 transform hover:scale-105 border-2 border-main text-main rounded-3xl hover:text-white hover:bg-gradient-to-r from-main to-sub hover:border-main px-8 py-1.5">
+            <button className="transition-all duration-300 transform hover:scale-105 bg-white text-main border-2 ml-2 md:ml-4 xl:ml-6 border-main text-lg whitespace-nowrap rounded-3xl px-4 lg:px-8 h-10">
               Log In
             </button>
             </Link>

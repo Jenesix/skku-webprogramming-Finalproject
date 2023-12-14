@@ -64,6 +64,18 @@ GoogleProvider({
             }
             }
         },
+        jwt({ token, user }) {
+          if (user) {
+            token.role = user.isAdmin ? 'admin' : 'user';
+            token.isAdmin = user.isAdmin;
+          }
+          return Promise.resolve(token);
+        },
+        session({ session, token }) {
+          session.user.role = token.role;
+          session.user.isAdmin = token.isAdmin;
+          return Promise.resolve(session);
+        },
         },
     };
 
