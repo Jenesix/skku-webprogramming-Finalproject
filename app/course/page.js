@@ -71,7 +71,7 @@ export default async function Course() {
                         </h1>
                         <Link href={`course/${cata.name}`} className="transition-all duration-300 transform hover:scale-105 border-2 border-main text-main rounded-full hover:text-white hover:bg-gradient-to-r from-main to-sub hover:border-main px-4 py-1">
                             See More
-                        </Link>
+                        </Link>                    
                     </div>
 
                     <div className="mt-4 mx-12 sm:mx-18 md:mx-28 lg:mx-24 xl:mx-32 grid grid-cols-1 lg:grid-cols-3 grid-flow-row gap-8">
@@ -82,7 +82,10 @@ export default async function Course() {
                             <div key={filteredCourse.id} className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
                                 <Image src={filteredCourse.cover_img} width={500} height={500} alt="Cat Development Bootcamp" layout="responsive" objectFit="cover" />
                                 <div className="mt-2">
-                                    <h1 className="text-lg md:text-xl mt-2">{filteredCourse.name}</h1>
+                                <Link href={`course/${cata.name}/${filteredCourse.name}`} >
+                                        <h1 className="text-lg md:text-xl mt-2">{filteredCourse.name}</h1>
+                                    </Link>
+                                    
                                     <p className="text-gray-400">{filteredCourse.description}</p>
                                 </div>
                             </div>

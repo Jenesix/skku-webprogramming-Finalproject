@@ -1,8 +1,5 @@
 import Image from "next/image";
 import hero from "/public/images/hero.png";
-import cat1 from "/public/images/cat1.jpg";
-import cat2 from "/public/images/cat2.jpg";
-import cat3 from "/public/images/cat3.jpg";
 
 async function getCourses() {
   try {
