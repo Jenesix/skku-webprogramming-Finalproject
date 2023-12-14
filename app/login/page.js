@@ -20,25 +20,11 @@ export default function Login() {
   }, [sessionStatus, router]);
 
 
-  // const isValidEmail = (email) => {
-  //   const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-  //   return emailRegex.test(email);
-  // };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const email = e.target[0].value;
     const password = e.target[1].value;
 
-    // if (!isValidEmail(email)) {
-    //   setError("Email is invalid");
-    //   return;
-    // }
-
-    // if (!password || password.length < 8) {
-    //   setError("Password is invalid");
-    //   return;
-    // }
 
     const res = await signIn("credentials", {
       redirect: false,
