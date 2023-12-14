@@ -1,6 +1,7 @@
 import Image from "next/image";
 import hero from "/public/images/hero.png";
 
+
 async function getCourses() {
   try {
       const res = await fetch("http://localhost:3000/api/courses", {
@@ -21,6 +22,7 @@ async function getCourses() {
       console.log("Error loading Courses: ", error);
   }
 };
+
 
 export default async function Home() {
   const Courses = await getCourses();
