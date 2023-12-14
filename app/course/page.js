@@ -69,7 +69,7 @@ export default async function Course() {
                         <h1 className="text-xl sm:text-2xl lg:text-2xl text-main font-medium  mt-5">
                         {cata.name}
                         </h1>
-                        <Link href={'course/'+cata.name} className="bg-white text-main transition-all duration-300 transform hover:scale-105 border-main border-2 px-4 py-1 mt-5 rounded-full">
+                        <Link href={`course/${cata.name}`} className="bg-white text-main transition-all duration-300 transform hover:scale-105 border-main border-2 px-4 py-1 mt-5 rounded-full">
                             See More
                         </Link>
                     </div>
@@ -80,10 +80,10 @@ export default async function Course() {
                         .slice(0, 3) // Display only the first three courses
                         .map((filteredCourse) =>(  
                             <div key={filteredCourse.id} className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
-                                <Image src={cat1} width={500} height={500} alt="Cat Development Bootcamp" layout="responsive" objectFit="cover" />
+                                <Image src={filteredCourse.cover_img} width={500} height={500} alt="Cat Development Bootcamp" layout="responsive" objectFit="cover" />
                                 <div className="mt-2">
                                     <h1 className="text-lg md:text-xl mt-2">{filteredCourse.name}</h1>
-                                    <p className="text-gray-400">{filteredCourse.description}Dr. Cat</p>
+                                    <p className="text-gray-400">{filteredCourse.description} Dr. Cat</p>
                                 </div>
                             </div>
                         ))}
