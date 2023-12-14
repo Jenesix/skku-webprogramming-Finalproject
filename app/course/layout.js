@@ -1,6 +1,5 @@
 import { Inter } from 'next/font/google'
 
-
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -9,13 +8,8 @@ export const metadata = {
 }
 
 export default function CourseLayout({ children }) {
-  return (
-    <html lang="en">
-        <body className={inter.className}>
-            <h1 className="font-main text-center text-2xl font-medium mt-4">Course</h1>
-            <div>{children}</div> 
-        </body>
-    </html>
+  return (    
+          <div>{children}</div> 
   )
 }
 
