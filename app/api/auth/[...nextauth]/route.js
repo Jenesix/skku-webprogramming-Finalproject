@@ -51,6 +51,7 @@ GoogleProvider({
                 if (!existingUser) {
                 const newUser = new User({
                     email: user.email,
+                    isAdmin: false,
                 });
     
                 await newUser.save();
