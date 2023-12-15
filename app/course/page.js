@@ -82,7 +82,7 @@ export default async function Page() {
                                 <Link href={`course/${cata.name}/${filteredCourse.name}`}>
                                     <div
                                         key={filteredCourse.id}
-                                        className="w-full sm:w-96 md:w-96 lg:w-300 h-300 transition-transform transform hover:scale-105 transition-all duration-300"
+                                        className="w-full sm:w-96 md:w-96 lg:w-300 h-300  transform hover:scale-105 transition-all duration-300"
                                     >
                                         <Image
                                             src={filteredCourse.cover_img}
