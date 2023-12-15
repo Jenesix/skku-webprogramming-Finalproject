@@ -6,16 +6,14 @@ import { useRouter } from "next/navigation";
 export default function CreateCourse({params}) {
     
     const [name,setName] = useState("");
-    const ep_course = params.in_course;
+    const ep_course = encodeURIComponent(params.in_course).replace('%20','+');
     const [description,setDescription] = useState("");
     const [videoId,setVideoId] = useState("");
    
 
     const [error, setError] = useState("");
 
-    const router = useRouter();
-
-    
+    const router = useRouter();    
 
     const handleSubmit = async (e) => {
         e.preventDefault();
