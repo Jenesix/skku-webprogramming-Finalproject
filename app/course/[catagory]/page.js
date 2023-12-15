@@ -44,19 +44,12 @@ async function getCourses() {
 };
 
 export default async function Page({params}) {
-    
-    // console.log(params.catagory);
-    // console.log("====================");
-
-
     const Catagories = await getCatagories();
         // console.log(Catagories);
         // console.log("====================");
         // console.log(typeof Catagories);
         // console.log("====================");
-
     const Courses = await getCourses();
-
         // console.log(Courses);
         // console.log("====================");
         // console.log(typeof Courses);
@@ -73,6 +66,9 @@ export default async function Page({params}) {
                         <h1 className="text-xl sm:text-2xl lg:text-2xl text-main font-medium  mt-5">
                         {cata.name}
                         </h1>
+                        <Link href={`course/create/${cata.name}`} className="transition-all duration-300 transform hover:scale-105 border-2 border-main text-main rounded-full hover:text-white hover:bg-gradient-to-r from-main to-sub hover:border-main px-4 py-1">
+                            + Create Course
+                        </Link>
                        
                     </div>
 
