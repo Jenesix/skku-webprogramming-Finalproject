@@ -40,16 +40,16 @@ export default function Navbar() {
             ) : (
               <>
               {session.user?.email}
-              <li>
+
                 <button
                   onClick={() => {
                     signOut();
                   }}
-                  className="p-2 px-5 -mt-1 bg-blue-800 rounded-full"
+                  className="p-2 px-5 -mt-1 ml-2 bg-blue-800 rounded-full text-white"
                 >
                   Logout
-                </button>d
-              </li>
+                </button>
+
             </>
           )}
 
