@@ -3,56 +3,48 @@ export default async function CreateCourse() {
 
   return(
     <div className="font-main flex flex-col text-center">
-        <h1>Create Course</h1>
+        <h1 className="mt-5 text-2xl">Create Course</h1>
         <form  className="max-w-md mx-auto">
-        <div className=" relative mb-6" data-te-input-wrapper-init>
+        <div className=" relative mb-6 mx-12" data-te-input-wrapper-init>
                   <div className="w-56 relative group mt-2">
                       <input type="text" id="name" required className=" h-6 px-4 py-2 text-md peer bg-white outline-none border-b-2 group-focus-within:border-main peer-valid:border-main"/>
-                      <label for="text" className="transform transition-all absolute top-0 left-0 h-full flex items-center pl-2 text-sm group-focus-within:text-xs peer-valid:test-xs group-focus-within:h-1/2 peer-valid:h-1/2 group-focus-within:-translate-y-full peer-valid:-translate-y-full group-focus-within:pl-0 peer-valid:pl-0 text-gray-400 peer-focus:text-main ">Email address</label>
+                      <label for="text" className="transform transition-all absolute top-0 left-0 h-full flex items-center pl-2 text-sm group-focus-within:text-xs peer-valid:test-xs group-focus-within:h-1/2 peer-valid:h-1/2 group-focus-within:-translate-y-full peer-valid:-translate-y-full group-focus-within:pl-0 peer-valid:pl-0 text-gray-400 peer-focus:text-main ">Name</label>
                   </div>
                 </div>
 
   <div className="mb-6">
-    <label htmlFor="category" className="block text-sm font-medium text-gray-600">
-      Category
-    </label>
-    <select
-      id="category"
-      name="category"
-      required
-      className="mt-1 p-2 w-full border rounded-md"
-    >
-      {/* Add your categories dynamically or hardcode options */}
-      <option value="category1">Category 1</option>
-      <option value="category2">Category 2</option>
-      <option value="category3">Category 3</option>
-    </select>
+    <label for="catagories" class="block mb-2 text-sm font-medium">Select an option</label>
+<select id="catagories" class="bg-gradient-to-r from-main to-sub border border-gray-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full p-2.5 ">
+  <option selected>Choose a Catagories</option>
+  <option value="Mathematics">Mathematics</option>
+  <option value="Programming">Programming</option>
+  <option value="Business">Business</option>
+  <option value="Marketing">Marketing</option>
+</select>
+  </div>
+
+  <div className="relative mb-6 mx-12" data-te-input-wrapper-init>
+    <div className="w-56 relative group mt-20">
+      <textarea
+        id="description"
+        name="description"
+        required
+        className="h-32 px-4  text-md peer bg-white outline-none border-b-2 group-focus-within:border-main peer-valid:border-main"
+      ></textarea>
+      <label
+        htmlFor="description"
+        className="transform transition-all absolute top-0 left-0 h-full flex items-center pl-2 text-sm group-focus-within:text-xs peer-valid:test-xs group-focus-within:h-1/2 peer-valid:h-1/2 group-focus-within:-translate-y-full peer-valid:-translate-y-full group-focus-within:pl-0 peer-valid:pl-0 text-gray-400 peer-focus:text-main "
+      >
+        Description
+      </label>
+    </div>
   </div>
 
   <div className="mb-6">
-    <label htmlFor="description" className="block text-sm font-medium text-gray-600">
-      Description
-    </label>
-    <textarea
-      id="description"
-      name="description"
-      required
-      className="mt-1 p-2 w-full border rounded-md"
-    ></textarea>
-  </div>
+    
+<label class="block mb-2 text-sm font-medium" for="file_input">Upload file</label>
+<input class=" w-full text-sm  border bg-gradient-to-r  border-gray-300 rounded-lg cursor-pointer bg-gray-50 " id="file_input" type="file"/>
 
-  <div className="mb-6">
-    <label htmlFor="image" className="block text-sm font-medium text-gray-600">
-      Upload Image
-    </label>
-    <input
-      type="file"
-      id="image"
-      name="image"
-      accept="image/*"
-      required
-      className="mt-1 p-2 w-full border rounded-md"
-    />
   </div>
 
   <div className="flex flex-col items-center justify-center mt-4">
