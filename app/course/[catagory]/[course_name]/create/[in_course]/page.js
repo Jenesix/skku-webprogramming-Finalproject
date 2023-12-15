@@ -4,9 +4,8 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function CreateCourse({params}) {
-    
     const [name,setName] = useState("");
-    const ep_course = encodeURIComponent(params.in_course).replace('%20','+');
+    const ep_course = encodeURIComponent(params.in_course.replace('%20',' '));
     const [description,setDescription] = useState("");
     const [videoId,setVideoId] = useState("");
    
