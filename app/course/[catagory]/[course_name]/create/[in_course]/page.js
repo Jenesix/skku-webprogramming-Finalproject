@@ -43,7 +43,7 @@ export default function CreateCourse({params}) {
 
     return(
         <div className="font-main flex flex-col text-center">
-            <h1 className="my-5 text-2xl">Create Course</h1>
+            <h1 className="my-5 text-2xl">Create Episode</h1>
             <form onSubmit={handleSubmit} className="max-w-md mx-auto">
                 <div className=" relative mb-6 mx-12" data-te-input-wrapper-init>
                     <div className="w-56 relative group mt-2">
