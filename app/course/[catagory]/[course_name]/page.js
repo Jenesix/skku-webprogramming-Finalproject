@@ -74,15 +74,10 @@ export default async function Page({params}) {
                             Episodes
                         </h1>                   
                         
-                        <Link href={`/course`} className="transition-all duration-300 transform hover:scale-105 border-2 border-main text-main rounded-full hover:text-white hover:bg-gradient-to-r from-main to-sub hover:border-main px-4 py-1 ml-2 mr-1">
-                            Add
+                        <Link href={`./${this_course.name}/create/${this_course.name}`} className="transition-all duration-300 transform hover:scale-105 border-2 border-main text-main rounded-full hover:text-white hover:bg-gradient-to-r from-main to-sub hover:border-main px-4 py-1 ml-2 mr-1">
+                            + Add
                         </Link>
-                        <Link href={`/course`} className="transition-all duration-300 transform hover:scale-105 border-2 border-main text-main rounded-full hover:text-white hover:bg-gradient-to-r from-main to-sub hover:border-main px-4 py-1 ml-1 mr-1">
-                            Edit
-                        </Link>
-                        <Link href={`/course`} className="transition-all duration-300 transform hover:scale-105 border-2 border-main text-main rounded-full hover:text-white hover:bg-gradient-to-r from-main to-sub hover:border-main px-4 py-1 ml-1 mr-2">
-                            Delete
-                        </Link>
+                        
                     </div>                
                         
                     <div className="mt-4 mx-12 sm:mx-18 md:mx-28 lg:mx-24 xl:mx-32 grid grid-cols-1 lg:grid-cols-3  grid-flow-row gap-8">
