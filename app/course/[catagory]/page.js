@@ -43,7 +43,7 @@ async function getCourses() {
     }
 };
 
-export default async function Course({params}) {
+export default async function Page({params}) {
     
     // console.log(params.catagory);
     // console.log("====================");

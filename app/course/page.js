@@ -45,7 +45,7 @@ async function getCourses() {
     }
 };
 
-export default async function Course() {
+export default async function Page() {
 
     const Catagories = await getCatagories();
         // console.log(Catagories);

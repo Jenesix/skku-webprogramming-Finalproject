@@ -43,7 +43,7 @@ async function getEP() {
     }
   };
 
-export default async function Home({params}) {
+export default async function Page({params}) {
     const Courses = await getCourses();
     const EPs = await getEP();
 
