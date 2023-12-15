@@ -1,5 +1,6 @@
 import Image from "next/image";
 import hero from "/public/images/hero.png";
+import Link from "next/link";
 
 
 async function getCourses() {
@@ -65,39 +66,48 @@ export default async function Home() {
         .filter((c) => c.course_cat === "Mathematics")
         .slice(0, 1) // Display only the first course1
         .map((filteredCourse) =>(  
-            <div key={filteredCourse.id} className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
+          <Link href={`course/Mathematics/${filteredCourse.name}`}>
+
+            <div key={filteredCourse.id} className="w-full sm:w-96 md:w-96 lg:w-300 h-300 hover:scale-105 transition-all duration-300">
                 <Image src={filteredCourse.cover_img} width={500} height={500} alt="Cat Development Bootcamp" layout="responsive" objectFit="cover" />
                 <div className="mt-2">
                     <h1 className="text-lg md:text-xl mt-2">{filteredCourse.name}</h1>
                     <p className="text-gray-400">{filteredCourse.description}</p>
                 </div>
             </div>
+          </Link>
         ))}
 
         {Courses.courses
         .filter((c) => c.course_cat === "Programming")
         .slice(0, 1) // Display only the first course1
         .map((filteredCourse) =>(  
-            <div key={filteredCourse.id} className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
+          <Link href={`course/Programming/${filteredCourse.name}`}>
+
+            <div key={filteredCourse.id} className="w-full sm:w-96 md:w-96 lg:w-300 h-300 hover:scale-105 transition-all duration-300">
                 <Image src={filteredCourse.cover_img} width={500} height={500} alt="Cat Development Bootcamp" layout="responsive" objectFit="cover" />
                 <div className="mt-2">
                     <h1 className="text-lg md:text-xl mt-2">{filteredCourse.name}</h1>
                     <p className="text-gray-400">{filteredCourse.description}</p>
                 </div>
             </div>
+          </Link>
         ))}
 
         {Courses.courses
         .filter((c) => c.course_cat === "Marketing")
         .slice(0, 1) // Display only the first course1
         .map((filteredCourse) =>(  
-            <div key={filteredCourse.id} className="w-full sm:w-96 md:w-96 lg:w-300 h-300">
+          <Link href={`course/Marketing/${filteredCourse.name}`}>
+
+            <div key={filteredCourse.id} className="w-full sm:w-96 md:w-96 lg:w-300 h-300 hover:scale-105 transition-all duration-300">
                 <Image src={filteredCourse.cover_img} width={500} height={500} alt="Cat Development Bootcamp" layout="responsive" objectFit="cover" />
                 <div className="mt-2">
                     <h1 className="text-lg md:text-xl mt-2">{filteredCourse.name}</h1>
                     <p className="text-gray-400">{filteredCourse.description}</p>
                 </div>
             </div>
+          </Link>
         ))}
       </div>
 
