@@ -48,10 +48,10 @@ export default async function Home() {
             <br />
             <br />
           </p>
-
-          <button className="text-xl py-1 md:mr-48 bg-white text-main border-2 border-sub rounded-2xl transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring focus:border-sub">
+          
+          <Link href="/signup" className="text-center text-xl py-1 md:mr-48 bg-white text-main border-2 border-sub rounded-2xl transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring focus:border-sub">
             Create your free account
-          </button>
+          </Link>
 
         </div>
         {/* This is a video course for you section */}
