@@ -1,8 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from 'react';
-import YouTube from 'react-youtube';
-
+import YouTubePlayer from "@/components/YTplayer";
 
 
 async function getEP() {
@@ -29,9 +27,6 @@ async function getEP() {
 export default async function Page({params}) {
     const EPs = await getEP();
 
-    // console.log('Youtube',Youtube)
-    // console.log("========================")
-
     return (
         <>
             {EPs.eps
@@ -39,17 +34,12 @@ export default async function Page({params}) {
             .map((this_ep) => ( 
                 <div className="font-main">
                     <div className="flex flex-col md:flex-row-reverse place-items-center justify-evenly text-black w-8 h-auto ">
-                        
-                        {/* {Youtube.items.map((item)=>(
-                            
-                            
-                            
-                        ))} */}
-                        
-                        <div className="">
-                            {this_ep.name}
+                        <div>
+                            <h1>{this_ep.name}</h1>
+                            <YouTubePlayer videoId={this_ep.videoId} />
                         </div>
 
+                    
                         <div className="">
                             back to course button
                         </div>
