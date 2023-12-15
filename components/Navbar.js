@@ -32,7 +32,7 @@ export default function Navbar() {
             </button>
             </Link>
             <Link href="/signup">
-            <button className="transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-main to-sub  text-white rounded-3xl ml-2 md:ml-4 xl:ml-6 px-4 lg:px-8 text-lg md:mr-12 whitespace-nowrap h-10">
+            <button className="transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-main to-sub  text-white rounded-3xl ml-2 md:ml-4 xl:ml-6 px-4  lg:px-8 text-lg md:mr-12 whitespace-nowrap h-10">
               Sign Up
             </button>
             </Link>
@@ -48,7 +48,7 @@ export default function Navbar() {
                   className="p-2 px-5 -mt-1 bg-blue-800 rounded-full"
                 >
                   Logout
-                </button>
+                </button>d
               </li>
             </>
           )}
